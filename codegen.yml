@@ -1,14 +1,11 @@
 overwrite: true
-schema: "schema.graphqls"
-documents: "src/**/*.graphql"
+schema: "schema.graphql"
+documents: "pages/**/*.tsx"
 generates:
-  src/generated/graphql.tsx:
+  ./graphql/generated.ts:
     plugins:
-      - "typescript"
-      - "typescript-operations"
-      - "typescript-react-apollo"
-      - "typescript-graphql-files-modules"
-      - "fragment-matcher"
-  ./graphql.schema.json:
-    plugins:
-      - "introspection"
+      - typescript
+      - typescript-operations
+      - typed-document-node
+    config:
+      fetcher: fetch
