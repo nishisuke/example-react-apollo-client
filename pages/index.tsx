@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 
-import { TodoDocument } from "../graphql/generated";
+import { TodosQueryDocument } from "../graphql/generated";
 import { useQuery } from "@apollo/client";
 
 const Home: NextPage = () => {
-  const { data, loading } = useQuery(TodoDocument, { variables: { first: 4 } });
+  const { data, loading } = useQuery(TodosQueryDocument, { variables: { first: 4 } });
 
   if (loading) return <div>Loading</div>;
 
